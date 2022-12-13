@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author djesw
+ *
+ */
+module EncapsulationExample {
+}

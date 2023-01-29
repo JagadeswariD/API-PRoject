@@ -6,7 +6,7 @@ import java.util.List;
 public class AccessElementsFromArrayListExample {
 	public static void main(String[] args) {
         List<String> topCompanies = new ArrayList<>();
-
+        ArrayList<String> clonedList=(ArrayList<String>) ((Object) topCompanies).clone();
         // Check if an ArrayList is empty
         System.out.println("Is the topCompanies list empty? : " + topCompanies.isEmpty());
 

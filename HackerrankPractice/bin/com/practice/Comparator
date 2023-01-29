@@ -1,0 +1,130 @@
+class Checker implements Comparator<Player>
+{
+
+	@Override
+	public int compare(Player p1, Player p2) {
+		if(Integer.valueOf(p2.score).compareTo(Integer.valueOf(p1.score))==0){
+	        return p1.name.compareTo(p2.name);
+	    }
+	    else{
+	        return Integer.valueOf(p2.score).compareTo(Integer.valueOf(p1.score));
+	    }
+	}
+	
+}
+
+class StudentDateComparator implements Comparator<StudentInformation> {
+    public int compare(StudentInformation s1, StudentInformation s2) {
+        return Integer.compare(s2.getBirthYear(), s1.getBirthYear());
+    }
+}
+
+ArrayList<StudentInformation> infos = new ArrayList<StudentInformation>();
+// fill array
+Collections.sort(infos, new StudentDateComparator());
+
+
+ArrayList<StudentInformation> infos = new ArrayList<StudentInformation>();
+// fill array
+Collections.sort(infos, 
+    Comparator.comparingInt(StudentInformation::getBirthYear).reversed());
+    
+
+ArrayList<StudentInformation> infos = new ArrayList<StudentInformation>();
+// fill array
+Collections.sort(infos, (s1, s2) ->
+    Integer.compare(s2.getBirthYear(), s1.getBirthYear()));
+    
+ public int compare(Student student2, Student student1) {
+        int CgpaCompare = student1.getCgpa().compareTo(student2.getCgpa());
+        int NameCompare = student2.getName().compareTo(student1.getName());
+        int IDCompare = student2.getID().compareTo(student1.getID());
+        if (CgpaCompare == 0) {
+            if (NameCompare == 0) {
+                return IDCompare;
+            } else {
+                return NameCompare;
+            }
+        } else {
+            return CgpaCompare;
+        }
+    }
+    
+    
+ //TagExtractor
+ --------------
+    
+    public class TagExtractor {
+	public static void main(String[] args) {
+		String s = "<h1><h1>Sanjay has no watch</h1></h1><par>So wait for a while</par>";
+		String[] split = new String[s.split(">").length];
+		split = s.split(">");
+		        String line = s;
+
+		        String tag = "<(.+)>([\\w]+[^<]*)</(\\1)>";
+		        Pattern p = Pattern.compile(tag);
+		        Matcher m = p.matcher(line);
+
+		        if (!m.find()){
+		            System.out.println("None");
+		            //continue;
+		        }
+
+		        m.reset();
+		        while (m.find()){
+		            System.out.println(m.group(2));
+		        }
+		    }
+
+}
+
+//RegEx IP Address
+------------------
+
+class Solution{
+
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        while(in.hasNext()){
+            String IP = in.next();
+            System.out.println(IP.matches(new MyRegex().pattern));
+        }
+
+    }
+}
+
+//Write your code here
+class MyRegex {
+    public static String pattern = "(\\b25[0-5]|\\b2[0-4][0-9]|\\b[01]?[0-9][0-9]?)(\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}";
+}
+
+//STACK
+-------
+
+ for(int i = 0; i < input.length(); i++) {
+                String item = input.charAt(i) + "";
+                if (stack.isEmpty()) {
+                    stack.push(item);    
+                } else if (
+                    stack.lastElement().equals("(") && item.equals(")") ||
+                    stack.lastElement().equals("{") && item.equals("}") ||
+                    stack.lastElement().equals("[") && item.equals("]")
+                    
+                ) {
+                    stack.pop();
+                } else {
+                    stack.push(item);
+                }
+                
+            }
+            
+            if (stack.empty()) {
+                System.out.println("true");
+            } else {
+                System.out.println("false");
+            } 
+            stack.clear(); // Resetting the Stack
+		}
+		
+		
+		

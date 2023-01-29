@@ -7,7 +7,7 @@ public class Solution {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		 Scanner scan = new Scanner(System.in);
-	        int i = Integer.parseInt(scan.nextLine());
+		    int i = Integer.parseInt(scan.nextLine());
 	        Double d =  Double.parseDouble(scan.nextLine());
 	        String s = scan.nextLine();
 

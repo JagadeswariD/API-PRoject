@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Registration Page</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+
+	<div class="container my-3">
+		<div class="row">
+			<div class="col-md-8 mx-auto">
+				<h2>Registration Page</h2>
+				<form th:action="@{/user-registration}" th:object="${user}" method="post">
+
+					<ul th:if="${#fields.hasErrors('*')}">
+						<div class="card">
+							<div class="card-body">
+
+								<li th:each="error : ${#fields.errors('*')}" th:text="${error}" style="color: red;">
+									error
+								</li>
+							</div>
+						</div>
+					</ul>
+
+					<div class="form-row">
+						<div class="col-md-6 form-group">
+							<label>User Name</label>
+							<input type="text" class="form-control" th:field="*{name}">
+						</div>
+						<div class="col-md-6 form-group">
+							<label>Email</label>
+							<input type="email" class="form-control" th:field="*{email}">
+						</div>
+						<div class="col-md-6 form-group">
+							<label>Age</label>
+							<input type="number" class="form-control" th:field="*{age}">
+						</div>
+						<div class="col-md-6 form-group">
+							<label>Address</label>
+							<input type="text" class="form-control" th:field="*{address}">
+						</div>
+						<div class="col-md-6 form-group">
+							<label>Password</label>
+							<input type="password" class="form-control" th:field="*{password}">
+						</div>
+
+
+
+					</div>
+
+					<button type="submit" class="btn btn-primary btn-block mt-3">Register</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

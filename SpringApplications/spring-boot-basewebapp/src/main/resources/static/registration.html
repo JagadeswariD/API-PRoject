@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title> Registration Page</title>
+	<style>
+		.boxed {
+			border: 1px solid black;
+			width: 350px;
+			text-align: left;
+
+		}
+		.fontstyle{
+			font-style: italic;
+			 color: blue;
+		}
+	</style>
+</head>
+
+<body>
+	<h1 style="color: maroon;"> Registration Page </h1>
+
+	<div class="boxed">
+		<form>
+			<table style="margin-left: auto; margin-right:auto; padding: 20px;">
+				<tr>
+					<td ><label for="FullName" class="fontstyle">Full Name</label></td>
+					<td><input type=text id="fullname" name="fullname" required/></td>
+				</tr>
+				<tr ">
+					<td><label for="email" class="fontstyle">Email</label></td>
+					<td><input type=text id="email" name="email" required/></td>
+				</tr>
+				<tr>
+					<td><label for="password" class="fontstyle">Password</label></td>
+					<td><input type=password id="password" name="password" required/></td>
+				</tr>
+				<tr>
+					<td><label for="dob" class="fontstyle">Date of Birth</label></td>
+					<td><input type=date id="dob" name="dob" required/></td>
+				</tr>
+				<tr>
+					<td><label for="gender" class="fontstyle">Gender</label></td>
+					<td><input type="radio" id="male" name="male" value="0"><label for="male">Male</label>
+					<input type="radio" id="female" name="female" value="1"><label for="female">Female</label></td>
+				</tr>
+				<tr>
+					<td><label for="country" class="fontstyle">Country</label></td>
+					<td><select name="country" id="country">
+						<option value="europe">Europe</option>
+						<option value="germany">Germany</option>
+						<option value="france">France</option>
+						<option value="usa">USA</option>
+						<option value="canada">Canada</option>
+					</select>
+				</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="Register"/></td>
+					<td><input type="reset" value="Reset"/></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+
+</body>
+
+</html>

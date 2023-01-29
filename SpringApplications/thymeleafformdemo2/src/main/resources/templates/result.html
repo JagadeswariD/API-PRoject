@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Result</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+
+	<div class="container my-3">
+		<div class="row">
+			<div class="col-md-8 mx-auto">
+				<h2>Project List</h2>
+				<!--<div class="my-3">
+    <p><strong>ID:</strong> <span th:text="${project.id}"></span></p>
+    <p><strong>Title:</strong> <span th:text="${project.title}"></span></p>
+    <p><strong>Type:</strong> <span th:text="${project.type}"></span></p>
+    <p><strong>Color:</strong> <span th:text="${project.color}"></span></p>
+    <p><strong>Description:</strong> <span th:text="${project.description}"></span></p>
+    <p><strong>Days:</strong> <span th:text="${project.days}"></span></p>
+    <p><strong>Price:</strong> <span th:text="${project.price}"></span></p>
+    <p><strong>Featured:</strong> <span th:text="${project.featured} ? 'Yes' : 'No'"></span></p>
+    <p><strong>Launch Date:</strong> <span th:text="${project.launchDate}"></span></p>
+</div>-->
+
+				<table class="table table-striped ">
+					<thead>
+						<tr>
+							<th scope="col">ID</th>
+							<th scope="col">Title</th>
+							<th scope="col">Type</th>
+							<th scope="col">Color</th>
+							<th scope="col">Description</th>
+							<th scope="col">Days</th>
+							<th scope="col">Price</th>
+							<th scope="col">Featured</th>
+							<!--<th scope="col">Launch Date</th>-->
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="project : ${projectList}">
+							<td><span th:text="${project.id}"></span></td>
+							<td><span th:text="${project.title}"></span></td>
+							<td><span th:text="${project.type}"></span></td>
+							<td><span th:text="${project.color}"></span></td>
+							<td><span th:text="${project.description}"></span></td>
+							<td><span th:text="${project.days}"></span></td>
+							<td><span th:text="${project.price}"></span></td>
+							<td><span th:text="${project.featured}"></span></td>
+							<!--<td><span th:text="${project.launchDate}"></span></td>-->
+						</tr>
+
+					</tbody>
+				</table>
+			
+				<a th:href="@{/create-project}">Add new project</a>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author djesw
- *
- */
-module StringExample {
-}
